@@ -1,10 +1,22 @@
+/*@Purpose::Ability to check valid regex.
+ *@File:: Email Validator Using Regex
+ *@Author:: Kishlay Kishan
+ */
+
 package com.bridgelabz.regex_email;
+
+import java.util.regex.Pattern;
 
 public class RegexValidation {
 
-	public static void main(String[] args) {
-		System.out.println("Welcome to the Java Regex problex to Validate Email Sample");
+	static public boolean isValid(String regex, String input) {
+		Pattern pattern = Pattern.compile(regex);
+		return Pattern.matches(regex, input);
 
 	}
 
+	public static void main(String[] args) {
+		boolean regexCheck = isValid("^([a-z]{1,10})$", "kishan");
+		System.out.println(regexCheck);
+	}
 }
